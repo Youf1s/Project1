@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="sty-index.css">
 </head>
+
 <body>
-    <h1>Hi This is Test</h1>
-    
+    <div class="Quote-Con" id="QuoteCon">
+        <div class="Quote-Tex">
+            <i class="fas fa-quote-left"></i>
+            <span id="Quote">Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test</span>
+            <i class="fas fa-quote-right"></i>
+
+        </div>
+        <div class="Quote-Aut">
+            <span id="Auth">Test Aouth</span>
+
+        </div>
+        <div class="Button-Con">
+            <button class="Twitter-But" id="Twitter" title="Tweet This!">
+                <i class="fab fa-twitter"></i>
+            </button>
+            <button id="NewQuo" onclick="showQuo()">New Quote =></button>
+        </div>
+    </div>
+
 </body>
+<script src="Src-index.js"></script>
 </html>
