@@ -3,11 +3,13 @@ const Quote = document.getElementById('Quote');
 const Auth = document.getElementById('Auth');
 const Twitter = document.getElementById('Twitter');
 const NewQuo = document.getElementById('NewQuo');
+const Loader = document.getElementById('Loader');
 
 let apiQuotes = [];
 
 
 async function GetQuo(){
+    Loading();
     const apiUrl = 'https://type.fit/api/quotes';
     try {
         
@@ -21,14 +23,20 @@ async function GetQuo(){
 }
 
 function showQuo(){
-    const quo = apiQuotes[getRandomInt(apiQuotes.length)]
+
+    Loading();
+    setTimeout(function() {
+        const quo = apiQuotes[getRandomInt(apiQuotes.length)]
     Quote.innerText = quo.text;
     if(quo.author){
         Auth.innerText = quo.author;
+        
     }else{
         Auth.innerText = "No one know's!";
     }
-
+    FinLoading();
+      }, 200);
+    
 }
 
 function tweetQuo(){
@@ -36,6 +44,16 @@ function tweetQuo(){
     const twitterUrl = `https://twitter.com/intent/tweet?text=${Quote.textContent} - ${Auth.textContent}`;
     window.open(twitterUrl,'_blank')
 
+}
+
+function Loading(){
+    Loader.hidden = false;
+    QuoteCon.hidden = true;
+
+}
+function FinLoading(){
+    Loader.hidden = true;
+    QuoteCon.hidden = false;
 }
 
 function getRandomInt(max) {
