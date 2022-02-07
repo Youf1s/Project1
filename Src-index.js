@@ -22,13 +22,19 @@ async function GetQuo(){
 
 function showQuo(){
     const quo = apiQuotes[getRandomInt(apiQuotes.length)]
-    console.log(quo);
     Quote.innerText = quo.text;
     if(quo.author){
         Auth.innerText = quo.author;
     }else{
         Auth.innerText = "No one know's!";
     }
+
+}
+
+function tweetQuo(){
+
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${Quote.textContent} - ${Auth.textContent}`;
+    window.open(twitterUrl,'_blank')
 
 }
 
